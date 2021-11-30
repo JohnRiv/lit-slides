@@ -1,0 +1,14 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "Web Components workshop files",
+  "main": "index.html",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open"
+  },
+  "author": "John Riviello",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.28"
+  }
+}
