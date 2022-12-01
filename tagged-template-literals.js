@@ -1,4 +1,4 @@
-const record = { wins: 6, losses: 7 };
+const record = { wins: 10, losses: 1 };
 // first argument is an array of strings, other arguments are the expressions
 function myTag(strings, winExpression, lossExpression) {
   const str0 = strings[0]; // "The Eagles have "
@@ -12,5 +12,5 @@ function myTag(strings, winExpression, lossExpression) {
 }
 let output = myTag`The Eagles have ${record.wins} wins and ${record.losses} losses.`;
 
-console.log(output); // The Eagles have 6 wins and 7 losses.
-                     //   With 4 games to go, they better win some more games!
+console.log(output); // The Eagles have 10 wins and 1 losses.
+                     //   With 6 games to go, they better win some more games!
