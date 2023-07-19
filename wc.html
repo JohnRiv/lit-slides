@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WC Hello World</title>
+  <style type="text/css">
+    p {
+      color: red;
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <script type="module">
+class SimpleGreeting extends HTMLElement {
+  constructor() {
+    super(); // always call super() first in the constructor
+    this.name = 'Somebody';
+  }
+
+  connectedCallback() {
+    if (this.hasAttribute("name")) {
+      this.name = this.getAttribute("name");
+    }
+    let tmpl = document.createElement('template');
+    tmpl.innerHTML = `
+      <style> p { color: blue; } </style>
+      <p>Hello, ${this.name}!</p>
+    `;
+    let shadowRoot = this.attachShadow({mode: 'open'});
+    shadowRoot.appendChild(tmpl.content.cloneNode(true));
+  }
+}
+customElements.define('simple-greeting', SimpleGreeting);
+  </script>
+
+<simple-greeting></simple-greeting>
+<simple-greeting name="World"></simple-greeting>
+
+<p>Main document paragraph</p>
+
+</body>
+</html>
+
+<!-- stan, nick, pete -->

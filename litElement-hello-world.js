@@ -1,20 +1,18 @@
 import { LitElement, html } from 'lit';
 
 class MyElement extends LitElement {
-  static get properties() {
-    return {
-      myFun: { type: Function, reflect: true } // <- not what you think
-    }
+  static properties = {
+    greeting: { }
   }
 
   constructor() {
     super(); // always call super first in the constructor
-    this.myFun = () => true;
+    this.greeting = "hello world!"; // defaults set in the constructor
   }
 
   render() {
     return html`
-      <h1></h1>
+      <h1>${this.greeting}</h1>
     `;
   }
 }

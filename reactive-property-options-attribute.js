@@ -1,28 +1,29 @@
 import { LitElement, html } from 'lit';
 
 class MyElement extends LitElement {
-  static get properties() {
-    return {
-      greeting: { type: String },
-      isChecked: { type: Boolean },
-      age: { type: Number },
-      names: { type: Array },
-      person: { type: Object }
-    }
+  static properties = {
+    greeting: { reflect: true, attribute: false },
+    date: { reflect: true, attribute: false },
+    isChecked: { reflect: true, attribute: "is-checked" },
+    age: { reflect: true, attribute: false },
+    names: { reflect: true },
+    person: { reflect: true }
   }
 
   constructor() {
     super(); // always call super first in the constructor
     this.greeting = "hello world!";
-    this.isChecked = true;
+    this.date = new Date();
+    this.isChecked = false;
     this.age = 25;
     this.names = ['Steven', 'Tom'];
-    this.person = { name: 'John', age: 60 };
+    this.person = { name: 'John', age: 26 };
   }
 
   render() {
     return html`
       <h1>${this.greeting}</h1>
+      <h2>The current date is ${this.date.toLocaleDateString()}</h2>
       <input type="checkbox" .checked=${this.isChecked}></input>
       <h2>this is a number: ${this.age}</h2>
       ${this.names.map(name => html`<h2>${name}</h2>`)}
