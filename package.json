@@ -1,7 +1,8 @@
 {
-  "name": "slides",
+  "name": "lit-slides",
   "version": "1.0.0",
-  "description": "Web Components workshop files",
+  "description": "Code examples from my slides about Lit",
+  "private": true,
   "main": "index.html",
   "scripts": {
     "start": "web-dev-server --node-resolve --open"
