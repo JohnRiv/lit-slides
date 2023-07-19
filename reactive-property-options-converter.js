@@ -36,7 +36,7 @@ class MyElement extends LitElement {
     return html`
       <h1>${this.greeting}</h1>
       <h2>The current date is ${this.date.toLocaleDateString()}</h2>
-      <input type="checkbox" .checked=${this.isChecked}></input>
+      <input type="checkbox" ?checked=${this.isChecked}></input>
       <h2>this is a number: ${this.age}</h2>
       ${this.names.map(name => html`<h2>${name}</h2>`)}
       <h3>${this.person.name} is ${this.person.age} years old</h3>
