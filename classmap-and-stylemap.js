@@ -46,7 +46,7 @@ export class MyElement extends LitElement {
     };
     return html`
       <h3>classMap directive example</h3>
-      <div class=${classMap(classesForClassMap)}>Classy text</div>
+      <p class=${classMap(classesForClassMap)}>Classy text</p>
       <hr>
       <h3>styleMap directive example</h3>
       <p style=${styleMap(stylesForStyleMap)}>Hello style!</p>
