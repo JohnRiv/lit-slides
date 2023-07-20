@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Theming with Custom Properties</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto';
+      background-color: #f2f2f2;
+    }
+  </style>
+
+  <script type="module">
+    import { LitElement, html, css } from 'lit';
+
+    class MyElement extends LitElement {
+      static styles = css`
+        h1 {
+          background-color: red;
+          padding: 20px;
+        }
+      `;
+      render() {
+        return html`
+          <h1 part="heading">Hello World!</h1>
+        `;
+      }
+    }
+
+    customElements.define('my-element', MyElement);
+  </script>
+</head>
+<body>
+  <style>
+    my-element::part(heading) {
+      background-color: lightgreen;
+      padding: 0;
+    }
+  </style>
+
+  <my-element></my-element>
+</body>
+</html>
